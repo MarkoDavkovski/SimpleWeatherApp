@@ -1,0 +1,114 @@
+@import './colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -1;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-image: url(https://images.unsplash.com/photo-1483354483454-4cd359948304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 2rem;
+}
+div {
+	color: white;
+	font-weight: 500;
+}
+h1 {
+	color: var(--accent-color);
+	font-weight: 600;
+	font-size: 2rem;
+	text-align: center;
+}
+.container {
+	margin-top: 3rem;
+	border-radius: 5px;
+	padding: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	background-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* p {
+	color: var(--white-color);
+	font-size: 1.1rem;
+	width: 70%;
+	text-align: center;
+} */
+
+.search-container {
+	border-bottom: 2px solid var(--white-color);
+	width: fit-content;
+}
+.search-container > button,
+.search-container > input {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 3px;
+	color: var(--white-color);
+	font-size: 1rem;
+}
+.search-container > input {
+	width: 6rem;
+}
+.search-container > button {
+	color: var(--accent-color);
+}
+.search-container > button:hover {
+	cursor: pointer;
+}
+.information {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	margin-top: 1rem;
+}
+.info-details {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	gap: 0.2rem;
+}
+.info-details > i {
+	color: var(--accent-color);
+	font-size: 1.3rem;
+	margin-right: 0.5rem;
+}
+.info-details > div > p {
+	font-size: 0.7rem;
+}
+.info-details > div {
+	display: flex;
+	flex-direction: column;
+}
+.wind-number {
+	font-size: 1.3rem;
+}
+.kph {
+	font-size: 0.6rem;
+}
