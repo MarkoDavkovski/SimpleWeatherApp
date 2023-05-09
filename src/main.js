@@ -19,16 +19,15 @@ export function main() {
 				{ mode: 'cors' }
 			);
 			resJson = await response.json();
+			cityDiv.innerHTML = `<i class="fa-solid fa-location-dot"></i> <div><p>Location</p> ${resJson.location.name} </div>`;
+			conditionDiv.innerHTML = `<i class="fa-solid fa-fan"></i> <div><p>Condition</p> ${resJson.current.condition.text}</div>`;
+			temperatureDiv.innerHTML = `<i class="fa-solid fa-temperature-three-quarters"></i><div> <p>Temperature</p>${resJson.current.temp_c}C°</div>`;
+			feelsLikeDiv.innerHTML = `<i class="fa-solid fa-temperature-three-quarters"></i> <div><p>Feels like</p> ${resJson.current.feelslike_c}C°</div>`;
+			humidityDiv.innerHTML = `<i class="fa-solid fa-droplet"></i> <div><p>Humidity</p>${resJson.current.humidity}%</div>`;
+			windDiv.innerHTML = ` <i class="fa-solid fa-wind"></i> <span class='wind-number'>${resJson.current.wind_kph}</span> <div><p>wind</p><span class='kph'>km/h</span></div>`;
 		} catch (err) {
-			console.log(err);
+			console.log(err.message);
 		}
-
-		cityDiv.innerHTML = `<i class="fa-solid fa-location-dot"></i> <div><p>Location</p> ${resJson.location.name} </div>`;
-		conditionDiv.innerHTML = `<i class="fa-solid fa-fan"></i> <div><p>Condition</p> ${resJson.current.condition.text}</div>`;
-		temperatureDiv.innerHTML = `<i class="fa-solid fa-temperature-three-quarters"></i><div> <p>Temperature</p>${resJson.current.temp_c}C°</div>`;
-		feelsLikeDiv.innerHTML = `<i class="fa-solid fa-temperature-three-quarters"></i> <div><p>Feels like</p> ${resJson.current.feelslike_c}C°</div>`;
-		humidityDiv.innerHTML = `<i class="fa-solid fa-droplet"></i> <div><p>Humidity</p>${resJson.current.humidity}%</div>`;
-		windDiv.innerHTML = ` <i class="fa-solid fa-wind"></i> <span class='wind-number'>${resJson.current.wind_kph}</span> <div><p>wind</p><span class='kph'>km/h</span></div>`;
 	}
 
 	weather('Skopje');
